@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:news_clean_architecture/common/variable.dart';
 
 class AppBlocObserver extends BlocObserver {
@@ -28,7 +29,7 @@ Future<void> bootstrap(
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
-
+  await dotenv.load(fileName: 'assets/.env');
   Bloc.observer = const AppBlocObserver();
 
   // Add cross-flavor configuration here

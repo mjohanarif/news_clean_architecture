@@ -22,25 +22,21 @@ void main() {
     totalResults: 2,
     articles: [
       Articles(
-        source: Source(id: 'cnn', name: 'CNN'),
-        author: 'Elizabeth Wolfe, Mary Gilbert',
+        source: Source(id: 'the-times-of-india', name: 'The Times of India'),
+        author: 'TIMESOFINDIA.COM',
         title:
-            'Hurricane Otis kills at least 27 in devastating blow to Acapulco,'
-            ' Mexico, that tore through high-rises and inundated roads - CNN',
+            'India Mobile Congress: After 5G, India aims to lead in 6G as well,'
+            ' PM Modi says - IndiaTimes',
         description:
-            'Mexican officials arrived in Acapulco to find a city ripped apart'
-            ' by a record-breaking Category 5 hurricane. At least 27 people are'
-            ' dead and 80% of the city’s hotels have been impacted.',
+            'India News: PM Modi on Friday inaugurated the 7th Edition of the'
+            ' India Mobile Congress at the recently-launched Bharat Mandapam.'
+            ' "We are not only expanding 5G in',
         url:
-            'https://www.cnn.com/2023/10/26/weather/hurricane-otis-acapulco-mexico-impact-thursday/index.html',
+            'https://timesofindia.indiatimes.com/india/india-mobile-congress-after-5g-india-aims-to-lead-in-6g-as-well-pm-modi-says/articleshow/104746054.cms',
         urlToImage:
-            'https://media.cnn.com/api/v1/images/stellar/prod/231026121620-08-hurricane-otis-mexico-1025.jpg?c=16x9&q=w_800,c_fill',
-        publishedAt: '2023-10-26T22:24:00Z',
-        content:
-            'At least 27 people are dead and Acapulco, Mexico, has been left in'
-            ' ruins after Hurricane Otis slammed into the coast Wednesday as a'
-            ' record-breaking Category 5 storm.\r\nFour people are also'
-            ' missing, Me… [+3144 chars]',
+            'https://static.toiimg.com/thumb/msid-104747674,width-1070,height-580,imgsize-48252,resizemode-75,overlay-toi_sw,pt-32,y_pad-40/photo.jpg',
+        publishedAt: '2023-10-27T06:21:04Z',
+        content: '12 quick and healthy tiffin ideas for working women',
       ),
     ],
   );
