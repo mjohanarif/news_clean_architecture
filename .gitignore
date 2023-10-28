@@ -87,7 +87,7 @@ unlinked_spec.ds
 coverage/
 
 # Environment
-.env
+# .env
 
 # Submodules
 packages/**/pubspec.lock
