@@ -94,6 +94,23 @@ class MockNewsRepository extends _i1.Mock implements _i5.NewsRepository {
           ),
         )),
       ) as _i6.Future<_i2.Either<_i7.Failure, _i8.News>>);
+
+  @override
+  _i6.Future<_i2.Either<_i7.Failure, _i8.News>> getSearchNews(String? query) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getSearchNews,
+          [query],
+        ),
+        returnValue: _i6.Future<_i2.Either<_i7.Failure, _i8.News>>.value(
+            _FakeEither_0<_i7.Failure, _i8.News>(
+          this,
+          Invocation.method(
+            #getSearchNews,
+            [query],
+          ),
+        )),
+      ) as _i6.Future<_i2.Either<_i7.Failure, _i8.News>>);
 }
 
 /// A class which mocks [RemoteDataSource].
@@ -115,6 +132,21 @@ class MockRemoteDataSource extends _i1.Mock implements _i9.RemoteDataSource {
           Invocation.method(
             #getNews,
             [],
+          ),
+        )),
+      ) as _i6.Future<_i3.NewsModel>);
+
+  @override
+  _i6.Future<_i3.NewsModel> getSearchNews(String? query) => (super.noSuchMethod(
+        Invocation.method(
+          #getSearchNews,
+          [query],
+        ),
+        returnValue: _i6.Future<_i3.NewsModel>.value(_FakeNewsModel_1(
+          this,
+          Invocation.method(
+            #getSearchNews,
+            [query],
           ),
         )),
       ) as _i6.Future<_i3.NewsModel>);

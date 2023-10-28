@@ -141,4 +141,79 @@ void main() {
       },
     );
   });
+
+  group('get search news', () {
+    const tQuery = 'usa';
+    test(
+      'should return news when a call to data source is successful',
+      () async {
+        // arrange
+        when(mockRemoteDataSource.getSearchNews(tQuery)).thenAnswer(
+          (realInvocation) async => tNewsModel,
+        );
+
+        // act
+        final result = await repository.getSearchNews(tQuery);
+
+        // assert
+        verify(mockRemoteDataSource.getSearchNews(tQuery));
+        expect(
+          result,
+          equals(const Right<dynamic, News>(tNews)),
+        );
+      },
+    );
+
+    test(
+      'should return server failure when a call to data source is unsuccessful',
+      () async {
+        // arrange
+        when(mockRemoteDataSource.getSearchNews(tQuery)).thenThrow(
+          ServerException(),
+        );
+
+        // act
+        final result = await repository.getSearchNews(tQuery);
+
+        // assert
+        verify(mockRemoteDataSource.getSearchNews(tQuery));
+        expect(
+          result,
+          equals(
+            const Left<Failure, dynamic>(
+              ServerFailure(''),
+            ),
+          ),
+        );
+      },
+    );
+
+    test(
+      'should return connection failure when the device has no internet',
+      () async {
+        // arrange
+        when(mockRemoteDataSource.getSearchNews(tQuery)).thenThrow(
+          const SocketException(
+            'Failed to connect to the network',
+          ),
+        );
+
+        // act
+        final result = await repository.getSearchNews(tQuery);
+
+        // assert
+        verify(mockRemoteDataSource.getSearchNews(tQuery));
+        expect(
+          result,
+          equals(
+            const Left<Failure, dynamic>(
+              ConnectionFailure(
+                'Failed to connect to the network',
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  });
 }

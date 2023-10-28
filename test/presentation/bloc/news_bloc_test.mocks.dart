@@ -12,6 +12,8 @@ import 'package:news_clean_architecture/domain/entities/news.dart' as _i7;
 import 'package:news_clean_architecture/domain/repositories/news_repository.dart'
     as _i2;
 import 'package:news_clean_architecture/domain/usecases/get_news.dart' as _i4;
+import 'package:news_clean_architecture/domain/usecases/get_search_news.dart'
+    as _i8;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -75,6 +77,41 @@ class MockGetNews extends _i1.Mock implements _i4.GetNews {
           Invocation.method(
             #execute,
             [],
+          ),
+        )),
+      ) as _i5.Future<_i3.Either<_i6.Failure, _i7.News>>);
+}
+
+/// A class which mocks [GetSearchNews].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockGetSearchNews extends _i1.Mock implements _i8.GetSearchNews {
+  MockGetSearchNews() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i2.NewsRepository get repository => (super.noSuchMethod(
+        Invocation.getter(#repository),
+        returnValue: _FakeNewsRepository_0(
+          this,
+          Invocation.getter(#repository),
+        ),
+      ) as _i2.NewsRepository);
+
+  @override
+  _i5.Future<_i3.Either<_i6.Failure, _i7.News>> execute(String? query) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #execute,
+          [query],
+        ),
+        returnValue: _i5.Future<_i3.Either<_i6.Failure, _i7.News>>.value(
+            _FakeEither_1<_i6.Failure, _i7.News>(
+          this,
+          Invocation.method(
+            #execute,
+            [query],
           ),
         )),
       ) as _i5.Future<_i3.Either<_i6.Failure, _i7.News>>);

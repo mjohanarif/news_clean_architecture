@@ -30,4 +30,24 @@ class NewsRepositoryImpl implements NewsRepository {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, News>> getSearchNews(String query) async {
+    try {
+      final result = await remoteDataSource.getSearchNews(
+        query,
+      );
+      return Right(
+        result.toEntity(),
+      );
+    } on ServerException {
+      return const Left(
+        ServerFailure(''),
+      );
+    } on SocketException {
+      return const Left(
+        ConnectionFailure('Failed to connect to the network'),
+      );
+    }
+  }
 }

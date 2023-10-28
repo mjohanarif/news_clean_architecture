@@ -4,20 +4,27 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:news_clean_architecture/common/failure.dart';
-import 'package:news_clean_architecture/domain/entities/news.dart';
-import 'package:news_clean_architecture/domain/usecases/get_news.dart';
+import 'package:news_clean_architecture/domain/domain.dart';
 import 'package:news_clean_architecture/presentation/presentation.dart';
 
 import 'news_bloc_test.mocks.dart';
 
-@GenerateMocks([GetNews])
+@GenerateMocks([
+  GetNews,
+  GetSearchNews,
+])
 void main() {
   late MockGetNews mockGetNews;
+  late MockGetSearchNews mockGetSearchNews;
   late NewsBloc newsBloc;
 
   setUp(() {
     mockGetNews = MockGetNews();
-    newsBloc = NewsBloc(mockGetNews);
+    mockGetSearchNews = MockGetSearchNews();
+    newsBloc = NewsBloc(
+      mockGetNews,
+      mockGetSearchNews,
+    );
   });
 
   const tNews = News(
@@ -44,6 +51,7 @@ void main() {
     ],
   );
 
+  const tQuery = 'usa';
   test('initial state should be initial', () {
     expect(newsBloc.state, NewsInitial());
   });
@@ -87,6 +95,50 @@ void main() {
     ],
     verify: (bloc) {
       verify(mockGetNews.execute());
+    },
+  );
+
+  blocTest<NewsBloc, NewsState>(
+    'should emit [loading, loaded] when data is gotten successfully',
+    build: () {
+      when(mockGetSearchNews.execute(tQuery)).thenAnswer(
+        (_) async => const Right(tNews),
+      );
+      return newsBloc;
+    },
+    act: (bloc) => bloc.add(
+      const OnGetSearchNews(tQuery),
+    ),
+    wait: const Duration(milliseconds: 100),
+    expect: () => [
+      NewsLoading(),
+      const NewsLoaded(result: tNews),
+    ],
+    verify: (bloc) {
+      verify(mockGetSearchNews.execute(tQuery));
+    },
+  );
+
+  blocTest<NewsBloc, NewsState>(
+    'should emit [loading, error] when data is unsuccessfully',
+    build: () {
+      when(mockGetSearchNews.execute(tQuery)).thenAnswer(
+        (_) async => const Left(
+          ServerFailure('Server failure'),
+        ),
+      );
+      return newsBloc;
+    },
+    act: (bloc) => bloc.add(
+      const OnGetSearchNews(tQuery),
+    ),
+    wait: const Duration(milliseconds: 100),
+    expect: () => [
+      NewsLoading(),
+      const NewsError(message: 'Server failure'),
+    ],
+    verify: (bloc) {
+      verify(mockGetSearchNews.execute(tQuery));
     },
   );
 }

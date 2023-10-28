@@ -7,6 +7,10 @@ import 'package:news_clean_architecture/data/models/news_model.dart';
 
 abstract class RemoteDataSource {
   Future<NewsModel> getNews();
+
+  Future<NewsModel> getSearchNews(
+    String query,
+  );
 }
 
 class RemoteDataSourceImpl implements RemoteDataSource {
@@ -20,6 +24,21 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   Future<NewsModel> getNews() async {
     final response = await client.get(
       Uri.parse('${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}'),
+    );
+
+    if (response.statusCode == 200) {
+      return NewsModel.fromJson(
+        json.decode(response.body) as Map<String, dynamic>,
+      );
+    } else {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<NewsModel> getSearchNews(String query) async {
+    final response = await client.get(
+      Uri.parse('${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}&q=$query'),
     );
 
     if (response.statusCode == 200) {

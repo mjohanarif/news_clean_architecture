@@ -6,7 +6,10 @@ part 'news_event.dart';
 part 'news_state.dart';
 
 class NewsBloc extends Bloc<NewsEvent, NewsState> {
-  NewsBloc(this._getNews) : super(NewsInitial()) {
+  NewsBloc(
+    this._getNews,
+    this._getSearchNews,
+  ) : super(NewsInitial()) {
     on<OnGetNews>((event, emit) async {
       emit(
         NewsLoading(),
@@ -22,6 +25,22 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
         ),
       );
     });
+    on<OnGetSearchNews>((event, emit) async {
+      emit(
+        NewsLoading(),
+      );
+
+      final result = await _getSearchNews.execute(event.query);
+      result.fold(
+        (failure) => emit(
+          NewsError(message: failure.message),
+        ),
+        (data) => emit(
+          NewsLoaded(result: data),
+        ),
+      );
+    });
   }
   final GetNews _getNews;
+  final GetSearchNews _getSearchNews;
 }

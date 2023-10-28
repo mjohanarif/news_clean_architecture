@@ -23,7 +23,7 @@ void main() {
     );
   });
 
-  group('get current news', () {
+  group('get news', () {
     final tNewsModel = NewsModel.fromJson(
       json.decode(
         readJson('helpers/dummy_data/dummy_news_response.json'),
@@ -62,6 +62,61 @@ void main() {
 
       // act
       final call = dataSource.getNews();
+
+      // assert
+      expect(
+        () => call,
+        throwsA(isA<ServerException>()),
+      );
+    });
+  });
+
+  group('get search news', () {
+    final tNewsModel = NewsModel.fromJson(
+      json.decode(
+        readJson('helpers/dummy_data/dummy_news_response.json'),
+      ) as Map<String, dynamic>,
+    );
+    const tQuery = 'usa';
+
+    test('should return news model when the response code is 200', () async {
+      // arrange
+      when(
+        mockHttpClient.get(
+          Uri.parse(
+            '${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}&q=$tQuery',
+          ),
+        ),
+      ).thenAnswer((_) async {
+        return http.Response(
+          readJson('helpers/dummy_data/dummy_news_response.json'),
+          200,
+        );
+      });
+
+      // act
+      final result = await dataSource.getSearchNews(tQuery);
+
+      // assert
+      expect(result, equals(tNewsModel));
+    });
+
+    test(
+        'should throw a server exception when the response'
+        ' code is 404 or other', () async {
+      // arrange
+      when(
+        mockHttpClient.get(
+          Uri.parse(
+            '${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}&q=$tQuery',
+          ),
+        ),
+      ).thenAnswer(
+        (_) async => http.Response('Not found', 404),
+      );
+
+      // act
+      final call = dataSource.getSearchNews(tQuery);
 
       // assert
       expect(
