@@ -1,4 +1,4 @@
-name: mason_very_good
+name: news_clean_architecture
 
 concurrency:
   group: $-$

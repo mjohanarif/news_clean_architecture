@@ -1,5 +1,5 @@
-name: mason_very_good
-description: Mason with very good core brick
+name: news_clean_architecture
+description: News clean architecture build with mason very good brick
 version: 1.0.0+1
 publish_to: none
 

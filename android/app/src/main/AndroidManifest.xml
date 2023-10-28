@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.exapmle.mason.very.good.mason_very_good">
+    package="com.exapmle.news.clean_architecture">
    <application
         android:label="${appName}"
         android:name="${applicationName}"

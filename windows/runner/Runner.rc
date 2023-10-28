@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example.mason_very_good" "\0"
-            VALUE "FileDescription", "mason_very_good" "\0"
+            VALUE "CompanyName", "com.example.news_clean_architecture" "\0"
+            VALUE "FileDescription", "news_clean_architecture" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "mason_very_good" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.example.mason_very_good. All rights reserved." "\0"
-            VALUE "OriginalFilename", "mason_very_good.exe" "\0"
-            VALUE "ProductName", "Mason Very Good" "\0"
+            VALUE "InternalName", "news_clean_architecture" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.example.news_clean_architecture. All rights reserved." "\0"
+            VALUE "OriginalFilename", "news_clean_architecture.exe" "\0"
+            VALUE "ProductName", "News Clean Architecture" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

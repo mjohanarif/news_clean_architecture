@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(mason_very_good LANGUAGES CXX)
+project(news_clean_architecture LANGUAGES CXX)
 
-set(BINARY_NAME "mason_very_good")
+set(BINARY_NAME "news_clean_architecture")
 
 cmake_policy(SET CMP0063 NEW)
 

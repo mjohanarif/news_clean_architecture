@@ -1,4 +1,4 @@
-package com.exapmle.mason.very.good.mason_very_good
+package com.exapmle.news.clean_architecture
 
 import io.flutter.embedding.android.FlutterActivity
 

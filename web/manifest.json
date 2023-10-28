@@ -1,11 +1,11 @@
 {
-    "name": "Mason Very Good",
-    "short_name": "Mason Very Good",
+    "name": "News Clean Architecture",
+    "short_name": "News Clean Architecture",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Mason with very good core brick",
+    "description": "News clean architecture build with mason very good brick",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
