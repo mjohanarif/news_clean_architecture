@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mason_very_good/domain/entities/news.dart';
-import 'package:mason_very_good/domain/usecases/get_news.dart';
+import 'package:news_clean_architecture/domain/entities/news.dart';
+import 'package:news_clean_architecture/domain/usecases/get_news.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../helpers/test_helper.mocks.dart';

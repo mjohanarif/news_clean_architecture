@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:mason_very_good/common/failure.dart';
-import 'package:mason_very_good/domain/entities/news.dart';
-import 'package:mason_very_good/domain/repositories/news_repository.dart';
+import 'package:news_clean_architecture/common/failure.dart';
+import 'package:news_clean_architecture/domain/entities/news.dart';
+import 'package:news_clean_architecture/domain/repositories/news_repository.dart';
 
 class GetNews {
   const GetNews({

@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
-import 'package:mason_very_good/common/variable.dart';
+import 'package:news_clean_architecture/common/variable.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();

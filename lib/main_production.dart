@@ -1,6 +1,6 @@
-import 'package:mason_very_good/bootstrap.dart';
-import 'package:mason_very_good/common/variable.dart';
-import 'package:mason_very_good/presentation/presentation.dart';
+import 'package:news_clean_architecture/bootstrap.dart';
+import 'package:news_clean_architecture/common/variable.dart';
+import 'package:news_clean_architecture/presentation/presentation.dart';
 
 void main() {
   bootstrap(
