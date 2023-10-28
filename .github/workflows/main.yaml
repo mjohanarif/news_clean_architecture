@@ -17,9 +17,11 @@ jobs:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/semantic_pull_request.yml@v1
 
   build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    uses: VGVentures/very-good-coverage@v1.1.1
     with:
-      flutter_channel: stable
+      path: "./coverage/lcov.info"
+      min_coverage: 80
+      exclude: "**/*_observer.dart **/change.dart"
 
   spell-check:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/spell_check.yml@v1
@@ -28,8 +30,3 @@ jobs:
         **/*.md
       modified_files_only: false
 
-uses: VGVentures/very-good-coverage@v1.1.1
-with:
-  path: "./coverage/lcov.info"
-  min_coverage: 80
-  exclude: "**/*_observer.dart **/change.dart"
