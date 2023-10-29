@@ -1,7 +1,10 @@
 part of 'news_bloc.dart';
 
-abstract class NewsEvent {
+abstract class NewsEvent extends Equatable {
   const NewsEvent();
+
+  @override
+  List<Object?> get props => [];
 }
 
 class OnGetNews extends NewsEvent {
@@ -12,5 +15,11 @@ class OnGetSearchNews extends NewsEvent {
   const OnGetSearchNews(
     this.query,
   );
+
   final String query;
+
+  @override
+  List<Object?> get props => [
+        query,
+      ];
 }

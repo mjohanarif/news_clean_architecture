@@ -23,7 +23,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   @override
   Future<NewsModel> getNews() async {
     final response = await client.get(
-      Uri.parse('${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}'),
+      Uri.parse('${Urls.baseUrl}&apiKey=${dotenv.get('API_KEY')}'),
     );
 
     if (response.statusCode == 200) {
@@ -38,7 +38,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   @override
   Future<NewsModel> getSearchNews(String query) async {
     final response = await client.get(
-      Uri.parse('${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}&q=$query'),
+      Uri.parse('${Urls.baseUrl}&apiKey=${dotenv.get('API_KEY')}&q=$query'),
     );
 
     if (response.statusCode == 200) {

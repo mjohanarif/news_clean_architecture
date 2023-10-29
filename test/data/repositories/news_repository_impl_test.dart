@@ -113,6 +113,16 @@ void main() {
       },
     );
 
+    test('on Server failure should have message in props list', () {
+      const onServerFailure = ServerFailure(
+        'fail to fetch',
+      );
+      expect(
+        onServerFailure.props.first,
+        'fail to fetch',
+      );
+    });
+
     test(
       'should return connection failure when the device has no internet',
       () async {

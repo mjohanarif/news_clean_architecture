@@ -56,6 +56,11 @@ void main() {
     expect(newsBloc.state, NewsInitial());
   });
 
+  test('OnGetNews should have empty props list', () {
+    const onGetNews = OnGetNews();
+    expect(onGetNews.props, isEmpty);
+  });
+
   blocTest<NewsBloc, NewsState>(
     'should emit [loading, loaded] when data is gotten successfully',
     build: () {

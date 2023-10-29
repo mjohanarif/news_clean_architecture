@@ -34,7 +34,7 @@ void main() {
       // arrange
       when(
         mockHttpClient
-            .get(Uri.parse('${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}')),
+            .get(Uri.parse('${Urls.baseUrl}&apiKey=${dotenv.get('API_KEY')}')),
       ).thenAnswer((_) async {
         return http.Response(
           readJson('helpers/dummy_data/dummy_news_response.json'),
@@ -55,7 +55,7 @@ void main() {
       // arrange
       when(
         mockHttpClient
-            .get(Uri.parse('${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}')),
+            .get(Uri.parse('${Urls.baseUrl}&apiKey=${dotenv.get('API_KEY')}')),
       ).thenAnswer(
         (_) async => http.Response('Not found', 404),
       );
@@ -84,7 +84,7 @@ void main() {
       when(
         mockHttpClient.get(
           Uri.parse(
-            '${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}&q=$tQuery',
+            '${Urls.baseUrl}&apiKey=${dotenv.get('API_KEY')}&q=$tQuery',
           ),
         ),
       ).thenAnswer((_) async {
@@ -108,7 +108,7 @@ void main() {
       when(
         mockHttpClient.get(
           Uri.parse(
-            '${Urls.baseUrl}apiKey=${dotenv.get('API_KEY')}&q=$tQuery',
+            '${Urls.baseUrl}&apiKey=${dotenv.get('API_KEY')}&q=$tQuery',
           ),
         ),
       ).thenAnswer(
