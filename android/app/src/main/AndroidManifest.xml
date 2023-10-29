@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.exapmle.news.clean_architecture">
+    package="com.example.news_clean_architecture">
    <application
         android:label="${appName}"
         android:name="${applicationName}"
