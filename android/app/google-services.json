@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "534725396883",
+    "project_id": "flavor-flutter-6c147",
+    "storage_bucket": "flavor-flutter-6c147.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534725396883:android:164e6a048f56bfb6e14066",
+        "android_client_info": {
+          "package_name": "com.example.news_clean_architecture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534725396883-mugr45sb5a3nfvlvpahpupsruf4lcmta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnlQX_Bmwi3iHwD_kKpUbFlP_tKO8bb4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534725396883-mugr45sb5a3nfvlvpahpupsruf4lcmta.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "534725396883-rtc3b4n8sjba3s60hr2mopvab89f49th.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.johan.news"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534725396883:android:e35031a096ada8bfe14066",
+        "android_client_info": {
+          "package_name": "com.johan.news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534725396883-mugr45sb5a3nfvlvpahpupsruf4lcmta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnlQX_Bmwi3iHwD_kKpUbFlP_tKO8bb4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534725396883-mugr45sb5a3nfvlvpahpupsruf4lcmta.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "534725396883-rtc3b4n8sjba3s60hr2mopvab89f49th.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.johan.news"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534725396883:android:822dfac9664b9247e14066",
+        "android_client_info": {
+          "package_name": "com.johan.news.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534725396883-mugr45sb5a3nfvlvpahpupsruf4lcmta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnlQX_Bmwi3iHwD_kKpUbFlP_tKO8bb4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534725396883-mugr45sb5a3nfvlvpahpupsruf4lcmta.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "534725396883-rtc3b4n8sjba3s60hr2mopvab89f49th.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.johan.news"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

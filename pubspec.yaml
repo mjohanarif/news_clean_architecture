@@ -11,6 +11,8 @@ dependencies:
   cached_network_image: ^3.3.0
   dartz: ^0.10.1
   equatable: ^2.0.5
+  firebase_core: ^2.22.0
+  firebase_remote_config: ^4.3.4
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
